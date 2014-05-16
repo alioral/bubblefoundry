@@ -19,10 +19,9 @@ specified parameter and lists them. </p>
     <h4> Method: POST </h4>
     <p>
       Given bubble array, inserts them to DB.<br/>
-      <b>Example Query: </b> /bubble
+      <b>Example Query: </b> <i>/bubble</i>
       <div>
         <b>Post Parameters:</b>
-        <pre>
           <code>
             {
             	"bubbles": [
@@ -58,7 +57,6 @@ specified parameter and lists them. </p>
             	}]
             }
           </code>
-        </pre>
       </div>
     </p>
   </h1>
