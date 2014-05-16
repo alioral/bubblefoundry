@@ -22,6 +22,7 @@ specified parameter and lists them. </p>
       <b>Example Query: </b> <i>/bubble</i>
       <div>
         <b>Post Parameters:</b>
+        <pre>
           <code>
             {
             	"bubbles": [
@@ -57,6 +58,7 @@ specified parameter and lists them. </p>
             	}]
             }
           </code>
+        </pre>
       </div>
     </p>
   </h1>
