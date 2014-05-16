@@ -8,15 +8,19 @@ specified parameter and lists them. </p>
   <h3>/bubbles</h3>
     <h4> Method: GET </h4>
     <p>
-      Lists the bubbles around user given conditions (distance, live status).
+      Lists the bubbles around user given conditions <b>(distance, live status).</b>
     </p>
     <p>
       <b>Example Query: </b>
-      /bubble?localTime='05/13/2014 17:44'&userCoordinate=-73.940392, 40.680760
+      <pre>
+        <code>
+          /bubble?localTime='05/13/2014 17:44'&userCoordinate=-73.940392, 40.680760
+        </code>
+      </pre>
     </p>
     <h4> Method: POST </h4>
     <p>
-      Given bubble array, inserts them to DB.
+      Given bubble array, inserts them to DB.<br/>
       <b>Example Query: </b> /bubble
       <div>
         <b>Post Parameters:</b>
