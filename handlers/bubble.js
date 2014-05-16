@@ -1,0 +1,67 @@
+var helper = require('../constants/helper');
+var integers = require('../constants/integers');
+var strings = require('../constants/strings');
+var lists = require('../constants/lists');
+var bubble = require('../controllers/bubble');
+var Response = require('../response');
+
+exports.listBubbles = function(req, res) {
+  helper.log('listBubbles', 'From handler listing bubbles');
+
+  var parameterList = lists.PARAMETERS_LIST_BUBBLES;
+  var listBubblesResponse;
+
+  try {
+
+    console.log(req.query);
+    var parameterCheck = helper.checkParameters(parameterList, req.query);
+
+    if (!parameterCheck['result']) {
+      listBubblesResponse = new Response(integers.CODE_ERROR_MISSING_PARAMETER,
+        parameterCheck['missingKey']);
+      return res.send(listBubblesResponse);
+    }
+
+    var listBubblesRequest = req.query;
+
+    var localTime = listBubblesRequest.localTime;
+    var userCoordinate = listBubblesRequest['userCoordinate'];
+
+    // Normalize coordinates from string to coordinate array
+    userCoordinate = helper.normalizeCoordinate(userCoordinate);
+
+    var bubbleList = bubble.listBubbles(localTime, userCoordinate,
+      function onListBubbles(err, data) {
+        if(err) {
+          listBubblesResponse = new Response(integers.CODE_ERROR,
+            err.message,
+            null);
+          return res.send(listBubblesResponse);
+        }
+        listBubblesResponse = new Response(integers.CODE_SUCCESS,
+          strings.MESSAGE_SUCCESS,
+          data);
+        return res.send(listBubblesResponse);
+      });
+  }
+  catch (err) {
+    listBubblesResponse = new Response(integers.CODE_ERROR,
+      err.message,
+      null);
+      return res.send(listBubblesResponse);
+  }
+}
+
+exports.createBubble = function(req, res) {
+  helper.log('createBubbles', 'From handler listing bubbles');
+  var createBubbleResponse = {};
+
+  try {
+    var isBubbleCreated = bubble.createBubble(req, res);
+    createBubbleResponse = {'data':isBubbleCreated};
+  }
+  catch (err) {
+    createBubbleResponse = {'Error': err.message};
+  }
+  return res.send(createBubbleResponse);
+}

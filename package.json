@@ -1,0 +1,17 @@
+{
+  "name": "FoundryInterview",
+  "version": "0.0.0",
+  "description": "Bubble Finder",
+  "main": "app.js",
+  "dependencies": {
+    "express": "~4.2.0",
+    "mongoose": "~3.8.9",
+    "body-parser":"*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ali Oral",
+  "license": "BSD-2-Clause"
+}

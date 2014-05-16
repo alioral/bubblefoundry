@@ -1,0 +1,6 @@
+exports.DEFAULT_PORT = 3000;
+exports.RADIUS_DATA_BUBBLE = 0.15; // In KM
+exports.DISTANCE_MULTIPLIER_KM = 6371;
+exports.CODE_SUCCESS = 0;
+exports.CODE_ERROR = 1;
+exports.CODE_ERROR_MISSING_PARAMETER = 2;
