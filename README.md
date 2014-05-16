@@ -12,11 +12,9 @@ specified parameter and lists them. </p>
     </p>
     <p>
       <b>Example Query: </b>
-      <pre>
-        <code>
+        <i>
           /bubble?localTime='05/13/2014 17:44'&userCoordinate=-73.940392, 40.680760
-        </code>
-      </pre>
+        </i>
     </p>
     <h4> Method: POST </h4>
     <p>
