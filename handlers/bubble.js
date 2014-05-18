@@ -27,6 +27,9 @@ exports.listBubbles = function(req, res) {
     var localTime = listBubblesRequest.localTime;
     var userCoordinate = listBubblesRequest['userCoordinate'];
 
+    // Normalize date from string to date
+    localTime = helper.normalizeDateTime(localTime);
+
     // Normalize coordinates from string to coordinate array
     userCoordinate = helper.normalizeCoordinate(userCoordinate);
 

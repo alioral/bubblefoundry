@@ -9,6 +9,9 @@ exports.listBubbles = function(currentDateTimeUser, userCoordinate, callback) {
   var bubblesLive = [];
   var bubblesUpcomingLive = [];
 
+  //var currentDateTimeUser = '05/13/2014 17:44';
+  console.log('currentDateTimeUser: ' + currentDateTimeUser);
+
   helper.listBubblesNearCoordinate(userCoordinate, function(err, data) {
 
     if(err) {

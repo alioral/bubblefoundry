@@ -9,6 +9,10 @@ exports.isInBubble = function(bubbleDistance) {
   return (bubbleDistance < integers.RADIUS_DATA_BUBBLE);
 }
 
+exports.normalizeDateTime = function(date) {
+  return date.substring(1, date.length - 1);
+}
+
 exports.normalizeCoordinate = function(coordinate) {
   var coordinateObject = JSON.parse("[" + coordinate + "]");
   var normalizedCoordinate = coordinateObject.map(function(coordinate) {
