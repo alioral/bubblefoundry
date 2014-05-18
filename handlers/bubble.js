@@ -57,11 +57,15 @@ exports.createBubble = function(req, res) {
   var createBubbleResponse = {};
 
   try {
-    var isBubbleCreated = bubble.createBubble(req, res);
-    createBubbleResponse = {'data':isBubbleCreated};
+    var createBubbleResponse = bubble.createBubble(req, res);
+    createBubbleResponse = new Response(integers.CODE_SUCCESS,
+      strings.MESSAGE_SUCCESS, createBubbleResponse);
+    return res.send(createBubbleResponse);
   }
   catch (err) {
-    createBubbleResponse = {'Error': err.message};
+    createBubbleResponse = new Response(integers.CODE_ERROR,
+      err.message,
+      null);
+    return res.send(createBubbleResponse);
   }
-  return res.send(createBubbleResponse);
 }

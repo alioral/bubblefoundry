@@ -69,5 +69,5 @@ exports.createBubble = function(req, res) {
       bubble['startTime'],
       bubble['endTime']);
   }
-  return true;
+  return {'isCreated':true};
 }
