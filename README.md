@@ -13,7 +13,7 @@ specified parameter and lists them. </p>
     <p>
       <b>URL Format: </b>
         <i>
-          /bubble?localTime=<dateAsString>&userCoordinate=<Longitude, Latitude>
+          /bubble?localTime=&lt;dateAsString&gt;&userCoordinate=&lt;Longitude, Latitude&gt;
         </i>
       <br/>
       <b>Example Query: </b>
