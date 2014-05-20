@@ -11,6 +11,11 @@ specified parameter and lists them. </p>
       Lists the bubbles around user given conditions <b>(distance, live status).</b>
     </p>
     <p>
+      <b>URL Format: </b>
+        <i>
+          /bubble?localTime=<dateAsString>&userCoordinate=<Longitude, Latitude>
+        </i>
+      <br/>
       <b>Example Query: </b>
         <i>
           /bubble?localTime='05/13/2014 17:44'&userCoordinate=-73.940392, 40.680760

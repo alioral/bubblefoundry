@@ -1,7 +1,7 @@
 var helper = require('../constants/helper');
 
 exports.listBubbles = function(currentDateTimeUser, userCoordinate, callback) {
-  var functionName = "listBubbles";
+  var functionName = 'listBubbles';
 
   var bubbleList = [];
 
@@ -52,8 +52,16 @@ exports.listBubbles = function(currentDateTimeUser, userCoordinate, callback) {
     });
 
     // Merge all lists together
+    /*
     bubbleList = bubblesLiveInside.concat(bubblesLive);
     bubbleList = bubbleList.concat(bubblesUpcomingLiveMapped);
+    */
+
+    bubbleList = {
+      "liveAndInside": bubblesLiveInside,
+      "live": bubblesLive,
+      "upcoming": bubblesUpcomingLiveMapped
+    }
 
     return callback(err, bubbleList);
   });

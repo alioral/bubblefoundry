@@ -1,6 +1,10 @@
 var integers = require('./integers');
 var Bubble = require('../models/bubble');
 
+function distanceInRadians(distance) {
+  re
+}
+
 exports.log = function(methodName, log) {
   console.log(new Date().toUTCString() + " - [" + methodName + "] " + log);
 }
@@ -72,7 +76,8 @@ exports.saveBubble = function(location, startTime, endTime, callback) {
 exports.listBubblesNearCoordinate = function(coordinate, callback) {
 
   var geoNearOptions = { spherical:true,
-    distanceMultiplier: integers.DISTANCE_MULTIPLIER_KM};
+    distanceMultiplier: integers.DISTANCE_MULTIPLIER_METERS,
+    maxDistance: integers.RADIUS_DATA_BUBBLE_WITH_PROXIMITY};
 
   Bubble.geoNear(coordinate, geoNearOptions, function (err, data) {
     return callback(err, data);
